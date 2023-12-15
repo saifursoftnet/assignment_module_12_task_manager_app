@@ -1,12 +1,13 @@
-
 import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:task_manager_app/style/style.dart';
-import 'package:task_manager_app/ui/controller/auth_controller.dart';
-import 'package:task_manager_app/ui/screens/login_screen.dart';
-import 'package:task_manager_app/ui/screens/update_profile_screen.dart';
+import 'package:assignment_module_12_task_manager_app/style/style.dart';
+import 'package:assignment_module_12_task_manager_app/ui/controller/auth_controller.dart';
+import 'package:assignment_module_12_task_manager_app/ui/screens/login_screen.dart';
+import 'package:assignment_module_12_task_manager_app/ui/screens/update_profile_screen.dart';
+
+import '../screens/login_screen.dart';
 
 class TopProfileSummeryCard extends StatefulWidget {
   final bool onTapStatus;
@@ -71,7 +72,7 @@ class _TopProfileSummeryCardState extends State<TopProfileSummeryCard> {
               MaterialPageRoute(
                 builder: (context) => const LoginScreen(),
               ),
-                  (route) => false,
+              (route) => false,
             );
           }
         },

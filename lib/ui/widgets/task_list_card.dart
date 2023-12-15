@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:assignment_module_12_task_manager_app/data/models/task.dart';
 import 'package:assignment_module_12_task_manager_app/data/network_caller/network_caller.dart';
@@ -13,8 +12,7 @@ enum TaskStatus {
 }
 
 class TaskListCard extends StatefulWidget {
-
-  final Tab task;
+  final Task task;
   final VoidCallback onStatusChangeRefresh;
   final Function(bool) taskUpdateStatusInProgress;
   final Color statusColor;
@@ -25,9 +23,7 @@ class TaskListCard extends StatefulWidget {
     required this.onStatusChangeRefresh,
     required this.taskUpdateStatusInProgress,
     this.statusColor = Colors.pinkAccent,
-
-  }
-  );
+  });
 
   @override
   State<TaskListCard> createState() => _TaskListCardState();
@@ -38,8 +34,7 @@ class _TaskListCardState extends State<TaskListCard> {
     widget.taskUpdateStatusInProgress(true);
 
     final response = await NetworkCaller.getRequest(
-        Urls.updateTaskStatus(status, widget.task.sId ?? '')
-    );
+        Urls.updateTaskStatus(status, widget.task.sId ?? ''));
     if (response.isSuccess) {
       widget.onStatusChangeRefresh();
     }
@@ -109,7 +104,8 @@ class _TaskListCardState extends State<TaskListCard> {
                                       onPressed: deleteTask,
                                       child: const Text(
                                         'Delete Task',
-                                        style: TextStyle(color: Colors.deepOrange),
+                                        style:
+                                            TextStyle(color: Colors.deepOrange),
                                       ),
                                     ),
                                     TextButton(
@@ -143,12 +139,12 @@ class _TaskListCardState extends State<TaskListCard> {
   void showUpdateDialog() {
     List<ListTile> items = TaskStatus.values
         .map((e) => ListTile(
-      title: Text(e.name),
-      onTap: () {
-        getTaskUpdateStatus(e.name);
-        Navigator.pop(context);
-      },
-    ))
+              title: Text(e.name),
+              onTap: () {
+                getTaskUpdateStatus(e.name);
+                Navigator.pop(context);
+              },
+            ))
         .toList();
 
     showDialog(
@@ -183,6 +179,7 @@ class _TaskListCardState extends State<TaskListCard> {
       Navigator.pop(context);
     }
     widget.taskUpdateStatusInProgress(true);
+
     final response = await NetworkCaller.getRequest(
       Urls.deleteTask(widget.task.sId.toString()),
     );

@@ -1,5 +1,11 @@
 # assignment_module_12_task_manager_app
 
+git add -A
+git commit -m "2nd commit"
+git branch -M main
+git remote add origin https://github.com/saifursoftnet/assignment_module_12_task_manager_app.git
+git push -u origin main
+
 A new Flutter project.
 
 ## Getting Started

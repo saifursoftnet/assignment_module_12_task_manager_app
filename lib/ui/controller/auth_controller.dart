@@ -2,10 +2,11 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:assignment_module_12_task_manager_app/app.dart';
 import 'package:assignment_module_12_task_manager_app/data/models/user_model.dart';
 import 'package:assignment_module_12_task_manager_app/ui/screens/login_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../main.dart';
 
 class Auth {
   static String? token;

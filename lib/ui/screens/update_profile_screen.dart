@@ -2,7 +2,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-  /*
+import 'package:image_picker/image_picker.dart';
+
 import 'package:assignment_module_12_task_manager_app/data/models/user_model.dart';
 import 'package:assignment_module_12_task_manager_app/data/network_caller/network_caller.dart';
 import 'package:assignment_module_12_task_manager_app/data/network_caller/network_response.dart';
@@ -10,10 +11,13 @@ import 'package:assignment_module_12_task_manager_app/data/utility/urls.dart';
 import 'package:assignment_module_12_task_manager_app/style/style.dart';
 import 'package:assignment_module_12_task_manager_app/ui/controller/auth_controller.dart';
 import 'package:assignment_module_12_task_manager_app/ui/controller/input_validations.dart';
-  */
 import 'package:assignment_module_12_task_manager_app/ui/widgets/background_image.dart';
 import 'package:assignment_module_12_task_manager_app/ui/widgets/snack_bar.dart';
 import 'package:assignment_module_12_task_manager_app/ui/widgets/top_profile_summary_card.dart';
+
+import '../../style/style.dart';
+import '../controller/auth_controller.dart';
+import '../controller/input_validations.dart';
 
 class UpdateProfileScreen extends StatefulWidget {
   const UpdateProfileScreen({super.key});
@@ -35,7 +39,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   bool updateProfileInProgress = false;
-  XFile? photo;
+  XFile?  photo;
 
   @override
   void initState() {
@@ -316,3 +320,4 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
     );
   }
 }
+

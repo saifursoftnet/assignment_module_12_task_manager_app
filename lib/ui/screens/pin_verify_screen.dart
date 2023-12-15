@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:assignment_module_12_task_manager_app/data/network_caller/network_caller.dart';
 import 'package:assignment_module_12_task_manager_app/data/network_caller/network_response.dart';
 import 'package:assignment_module_12_task_manager_app/data/utility/urls.dart';
@@ -9,6 +8,7 @@ import 'package:assignment_module_12_task_manager_app/ui/screens/login_screen.da
 import 'package:assignment_module_12_task_manager_app/ui/screens/set_password_screen.dart';
 import 'package:assignment_module_12_task_manager_app/ui/widgets/background_image.dart';
 import 'package:assignment_module_12_task_manager_app/ui/widgets/snack_bar.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 
 class PinVerifyScreen extends StatefulWidget {
   final String email;

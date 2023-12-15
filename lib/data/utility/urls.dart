@@ -14,7 +14,7 @@ class Urls {
   static String getCompleteTaskList = '$_baseUrl/listTaskByStatus/${TaskStatus.Completed.name}';
   static String getCancelTaskList = '$_baseUrl/listTaskByStatus/${TaskStatus.Cancelled.name}';
   static const String getTaskStatusCount = '$_baseUrl/taskStatusCount';
-  static String updateTaskStatus(String status, String taskId) => _baseUrl/updateTaskStatus/$taskId/$status';
+  static String updateTaskStatus(String status, String taskId) => '$_baseUrl/updateTaskStatus/$taskId/$status';
 
   static const String profileUpdate = '$_baseUrl/profileUpdate';
 
